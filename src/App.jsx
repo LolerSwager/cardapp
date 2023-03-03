@@ -1,0 +1,291 @@
+import React, { useEffect, useState } from "react"
+import "./App.css"
+import Card from "./Components/Card"
+
+//! stupid way i hate it
+import image1 from "./assets/images/Billede1.png"
+import image2 from "./assets/images/Billede2.jpg"
+import image3 from "./assets/images/Billede3.jpg"
+import image4 from "./assets/images/Billede4.jpg"
+import image5 from "./assets/images/Billede5.png"
+import image6 from "./assets/images/Billede6.jpg"
+import image7 from "./assets/images/Billede7.jpg"
+import image8 from "./assets/images/Billede8.png"
+import image9 from "./assets/images/Billede9.png"
+import image10 from "./assets/images/Billede10.png"
+import image11 from "./assets/images/Billede11.png"
+import image12 from "./assets/images/Billede12.png"
+import styled from "styled-components"
+
+export default function App() {
+    const cards = [
+        {
+            id: 1,
+            title: "Normal hudtype",
+            image: image1,
+            kendetegn: [
+                "Fast",
+                "Klar",
+                "Ingen udviddede porer eller Linjer/rynker",
+                "Ingen urenheder",
+                "Ingen teleangiectasia",
+            ],
+            Behandlingsformål: ["Rense epidermus", "Fugte epidermis", "Beskytte dermis"],
+        },
+        {
+            id: 2,
+            title: "Tør hudtype",
+            image: image2,
+            kendetegn: [
+                "Fine linjer eller rynker",
+                "Pergamentagtig overflade",
+                "Små porer",
+                "Comedoner og milier",
+                "Farven kan være trist og grålig",
+                "Føles stram",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Nære cellemetabolismen",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+        },
+        {
+            id: 3,
+            title: "Fedtet hudtype",
+            image: image3,
+            kendetegn: [
+                "Blank og fedtet overflade",
+                "Grov struktur med udvidede porer",
+                "Ofte comedoner, pustler og pabler",
+                "Virker tykkere end normal hud",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Ilte/stimulere cellemetabolismen",
+                "Normalisere talgproduktionen",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+        },
+        {
+            id: 4,
+            title: "Kombineret hudtype",
+            image: image4,
+            kendetegn: [
+                "T-zonen er fedtet med udvidede porer",
+                "Resten af ansigtet er normal til tør",
+                "Comedoner",
+                "Teleangiectasia",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Normalisere talgproduktionen",
+                "Berolige immunforsvaret ",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+        },
+        {
+            id: 5,
+            title: "Sart hudtype",
+            image: image5,
+            kendetegn: [
+                "Fin struktur med fine porer",
+                "Ofte mange teleangiectasia",
+                "Tendens til udtørring",
+                "Comedoner og milier",
+                "Virker tynd med nervespidserne tæt ved overfladen",
+                "Tåler vind, sol, luft og vand dårligt",
+                "Er lys og ses ofte hos rød - og lyshårede personer",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Dulme nervepåvirkningen",
+                "Berolige immunforsvaret",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+            Kontraindikationer: [
+                "Mekaniske eller kraftige peelinger",
+                "Nappe-, ælte, - og klappetag i massage",
+                "Vakuum",
+            ],
+        },
+        {
+            id: 6,
+            title: "Dehydreret hudtype",
+            image: image6,
+            kendetegn: [
+                "Føles pergamentagtig",
+                "kan skalle pletvis",
+                "Meget fine linjer ved dybere udtørring",
+                "Der kan forekomme lukkede comedoner",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Superfugte epidermis",
+                "Beskytte dermis",
+            ],
+            Kan_skyldes: ["Fugtmangel", "Fejlbehandling", "Kost", "Medicin", "Miljø"],
+        },
+        {
+            id: 7,
+            title: "Tilstoppet hudtype",
+            image: image7,
+            kendetegn: ["Åbne og lukkede comedoner", "Pabler og pustler", "Evt. cicatricer", "Ujævnoverﬂade"],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Regulere talgproduktionen",
+                "Fremme ophelingen af huden",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+            Kan_skyldes: ["Hormonel ubalance", "Comedogene ingredienser", "Rygning og forurening", "Friktion"],
+        },
+        {
+            id: 8,
+            title: "Fejlbehandlet hudtype",
+            image: image8,
+            kendetegn: [
+                "Pergamentagitg udtørring i overfladen",
+                "Fedtet i dybden",
+                "Finporet",
+                "Mange lukkede comedoner",
+                "Evt. urenheder",
+                "Teleangiectasia",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Normalisere PH-værdien",
+                "Superfugte epidermis",
+                "Beskytte dermis",
+            ],
+            Kan_skyldes: ["Forkert behandling/produktvalg", "Manglende pleje af huden", "Vand og sæbe"],
+        },
+        {
+            id: 9,
+            title: "Sensitiv hudtype",
+            image: image9,
+            kendetegn: [
+                "Kan være svært at se med det blotte øje (vigtig at spørge ind til hos kunden)",
+                "Rød og varm, særligt på kinderne",
+                "Følsom over for bl.a. varme, tryk og berøring",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Dulme nervepåvirkningen",
+                "Berolige immunforsvaret",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+            Kan_skyldes: ["Stress", "Friktion"],
+        },
+        {
+            id: 10,
+            title: "Pigmenteret hudtilstand (Macula)",
+            image: image10,
+            kendetegn: [
+                "Macula - en velafgrænset farveændring i hudens niveau",
+                "Hyperpigmentering = marcula med mere pigment end omgivelserne",
+                "Hypigmentering = macula med mindre pigment end omgivelserne",
+            ],
+            Behandlingsformål: ["Rense epidermis", "Udligne pigmentering", "Fugte epidermis", "Beskytte dermis"],
+            Kan_skyldes: ["Sol", "Hormonelt", "Post inflammatorisk", "Duftstoffer", "Medicin"],
+        },
+        {
+            id: 11,
+            title: "Atropisk hudtilstand Aldersbetinget",
+            image: image11,
+            kendetegn: [
+                "Grå, bleg teint",
+                "Dårligt blodomløb",
+                "Virker tynd",
+                "Fedttør",
+                "Dybde rynker og nedsat turgor",
+                "Ujævn struktur",
+                "Pigmentpletter (marcula)",
+                "Telengiectasia",
+            ],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Nære cellemetabolismen",
+                "Stimulere blodcirkulationen",
+                "Opstramme epidermis/dermis",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+            Kan_skyldes: [
+                "Genetik",
+                "Stress",
+                "Sol, rygning, frie radikaler",
+                "Forkerte produkter",
+                "Medicin",
+                "Sol",
+                "Forurening",
+            ],
+        },
+        {
+            id: 12,
+            title: "Atropisk tilstand Miljøbetinget",
+            image: image12,
+            kendetegn: ["Læderagtig overflade", "Store porer", "Comedoner", "Linjer/rynker og nedsat turgor "],
+            Behandlingsformål: [
+                "Rense epidermis",
+                "Dybderense periodiske anomalier",
+                "Nære cellemetabolismen",
+                "Stimulere blodcirkulationen",
+                "Opstramme epidermis/dermis",
+                "Fugte epidermis",
+                "Beskytte dermis",
+            ],
+            Kan_skyldes: [
+                "Genetik",
+                "Stress",
+                "Sol, rygning, frie radikaler",
+                "Forkerte produkter",
+                "Medicin",
+                "Sol",
+                "Forurening",
+            ],
+        },
+    ]
+
+    const [reload, setReload] = useState()
+
+    useEffect(() => {
+        console.log("hallo ?")
+    }, [reload])
+
+    function renderCard() {
+        return cards
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 1)
+            .map((data) => <Card data={data} key={data.id} />)
+    }
+
+    return (
+        <>
+            <h1>Anitas kort app</h1>
+            <StyledMenu>
+                <button onClick={() => setReload(!reload)}>
+                    Rolle a random <i class="fa-solid fa-dice"></i>
+                </button>
+            </StyledMenu>
+            <div className="card-holder">{renderCard()}</div>
+        </>
+    )
+}
+
+const StyledMenu = styled.button`
+    width: 100%;
+`
