@@ -284,7 +284,7 @@ export default function App() {
     }
 
     return (
-        <>
+        <main>
             <h1>kort app</h1>
             <StyledMenu>
                 <button onClick={() => RandomRoll()}>
@@ -300,13 +300,13 @@ export default function App() {
                 </select>
             </StyledMenu>
             <div className="card-holder">{RenderCard()}</div>
-        </>
+        </main>
     )
 }
 
-const StyledMenu = styled.div`
+const StyledMenu = styled.menu`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
