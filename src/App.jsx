@@ -205,7 +205,7 @@ export default function App() {
         },
         {
             id: 11,
-            title: "Atropisk hudtilstand Aldersbetinget",
+            title: "Atrofisk hudtilstand Aldersbetinget",
             image: image11,
             kendetegn: [
                 "Grå, bleg teint",
@@ -238,7 +238,7 @@ export default function App() {
         },
         {
             id: 12,
-            title: "Atropisk tilstand Miljøbetinget",
+            title: "Atrofisk tilstand Miljøbetinget",
             image: image12,
             kendetegn: ["Læderagtig overflade", "Store porer", "Comedoner", "Linjer/rynker og nedsat turgor "],
             Behandlingsformål: [
@@ -272,7 +272,7 @@ export default function App() {
 
     // den her vælger kortet
     function RenderCard() {
-        if (cardNum === 0 ) {
+        if (cardNum === 0) {
             return cards.slice(0, cards.length).map((data) => <Card data={data} key={data.id} />)
         } else {
             return cards.slice(cardNum - 1, cardNum).map((data) => <Card data={data} key={data.id} />)
@@ -304,22 +304,23 @@ export default function App() {
     )
 }
 
-const StyledMenu = styled.button`
+const StyledMenu = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
     background-color: #1a1a1a;
+    padding: 0.6em 1.2em;
     button {
         background-color: #ff8a9e;
         color: #1a1a1a;
-        font-weight: 700;
         border: 1px solid transparent;
         border-radius: 8px;
         transition: border-color 0.25s;
         padding: 0.6em 1.2em;
         font-size: 1em;
+        font-weight: 700;
         cursor: pointer;
         &:hover {
             border-color: #ff8a9e;

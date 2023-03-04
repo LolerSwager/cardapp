@@ -75,16 +75,14 @@ const StyledCard = styled.article`
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 1rem;
 `
 
 const CardFront = styled.section`
     display: ${(props) => (props.showCard ? "none" : "unset")};
-    position: relative;
     width: 100%;
+    max-width: 600px;
     h2 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
         background-color: #070707b9;
         width: 100%;
         height: 50px;
@@ -95,12 +93,38 @@ const CardFront = styled.section`
     img {
         width: 100%;
         object-fit: cover;
+        margin: 0 0 -5px 0;
     }
 `
 
 const CardBack = styled.section`
     display: ${(props) => (props.showCard ? "unset" : "none")};
+    border: 1px solid #ff8a9e;
+    width: 100%;
+    max-width: 600px;
+    h2 {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     h3 {
-        margin: 1rem;
+        margin: 0 1rem;
+    }
+    ul {
+        margin: 0 0 1rem 2rem;
+        li {
+            list-style-type: none;
+            &::before {
+                font-family: "Font Awesome 5 Free";
+                content: "\f004";
+                font-weight: 500;
+                color: #ff8a9e;
+                display: inline-block;
+                width: 1em;
+                margin: 0 .5rem 0 0;
+            }
+        }
     }
 `
