@@ -34,7 +34,7 @@ export default function CardSite() {
             <h1>Kosmetiker kort app</h1>
             <StyledMenu>
                 <button onClick={() => RandomRoll()}>
-                    Roll a random <i className="fa-solid fa-dice"></i>
+                    Roll{/*  a random */} <i className="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
                     <option value={0}>show all</option>
@@ -56,7 +56,7 @@ const StyledMenu = styled.menu`
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
-    background-color: #1a1a1a;
+    /* background-color: #1a1a1a; */
     padding: 0.6em 1.2em;
     button {
         background-color: #ff8a9e;
