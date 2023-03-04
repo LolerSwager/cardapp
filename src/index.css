@@ -16,8 +16,7 @@
 
 #root {
     width: 100%;
-    min-height: -webkit-fill-available;
-    height: 100vh;
+    height: 100dvh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto;
