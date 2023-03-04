@@ -265,11 +265,8 @@ export default function App() {
     const [cardNum, setCardNum] = useState(1)
 
     let handleChange = (event) => {
-        setCardNum(event.target.cardNum)
-        console.log(event.target)
+        setCardNum(event.target.value)
     }
-
-    console.log(cardNum)
 
     // den her vælger kortet
     function RenderCard() {
@@ -289,7 +286,7 @@ export default function App() {
             <h1>kort app</h1>
             <StyledMenu>
                 <button onClick={() => RandomRoll()}>
-                    Roll a random <i class="fa-solid fa-dice"></i>
+                    Roll a random <i className="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
                     <option value={0}>show all</option>
