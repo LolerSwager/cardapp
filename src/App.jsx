@@ -279,11 +279,15 @@ export default function App() {
         }
     }
 
+    function RandomRoll() {
+        setCardNum(Math.floor(Math.random() * cards.length) + 1)
+    }
+
     return (
         <>
             <h1>kort app</h1>
             <StyledMenu>
-                <button disabled={cardNum === 0 ? true : false}>
+                <button disabled={cardNum === 0 ? true : false} onClick={() => RandomRoll()}>
                     Rolle a random <i class="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
