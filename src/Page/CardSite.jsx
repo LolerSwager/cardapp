@@ -34,7 +34,7 @@ export default function CardSite() {
             <h1>Kosmetiker kort app</h1>
             <StyledMenu>
                 <button onClick={() => RandomRoll()}>
-                    Roll a random <i className="fa-solid fa-dice"></i>
+                    {/* Roll a random */} <i className="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
                     <option value={0}>show all</option>
