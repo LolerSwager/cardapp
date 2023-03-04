@@ -123,7 +123,19 @@ const CardBack = styled.section`
                 color: #ff8a9e;
                 display: inline-block;
                 width: 1em;
-                margin: 0 .5rem 0 0;
+                margin: 0 0.5rem 0 0;
+            }
+            &:hover {
+                &::before {
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f004";
+                    font-weight: 500;
+                    color: #ff8a9e;
+                    display: inline-block;
+                    width: 1em;
+                    margin: 0 0.5rem 0 0;
+                    font: var(--fa-font-solid);
+                }
             }
         }
     }
