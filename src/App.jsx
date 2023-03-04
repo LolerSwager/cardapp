@@ -289,17 +289,15 @@ export default function App() {
             <h1>kort app</h1>
             <StyledMenu>
                 <button onClick={() => RandomRoll()}>
-                    Rolle a random <i class="fa-solid fa-dice"></i>
+                    Roll a random <i class="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
                     <option value={0}>show all</option>
-                    <option value={1}>show 1</option>
-                    <option value={2}>show 2</option>
-                    {/* {cards.map((data) => (
+                    {cards.map((data) => (
                         <option value={data.id} key={data.id}>
                             {data.title}
                         </option>
-                    ))} */}
+                    ))}
                 </select>
             </StyledMenu>
             <div className="card-holder">{RenderCard()}</div>
