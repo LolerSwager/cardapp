@@ -265,12 +265,14 @@ export default function App() {
     const [cardNum, setCardNum] = useState(1)
 
     let handleChange = (event) => {
-        setCardNum(event.target.value)
+        setCardNum(parseInt(event.target.value))
     }
+
+    // console.log(cardNum);
 
     // den her vælger kortet
     function RenderCard() {
-        if (cardNum === 0) {
+        if (cardNum === 0 ) {
             return cards.slice(0, cards.length).map((data) => <Card data={data} key={data.id} />)
         } else {
             return cards.slice(cardNum - 1, cardNum).map((data) => <Card data={data} key={data.id} />)
