@@ -264,8 +264,9 @@ export default function App() {
 
     const [cardNum, setCardNum] = useState(1)
 
-    const handleChange = (event) => {
+    let handleChange = (event) => {
         setCardNum(event.target.cardNum)
+        console.log(event.target)
     }
 
     console.log(cardNum)
@@ -287,16 +288,18 @@ export default function App() {
         <>
             <h1>kort app</h1>
             <StyledMenu>
-                <button disabled={cardNum === 0 ? true : false} onClick={() => RandomRoll()}>
+                <button onClick={() => RandomRoll()}>
                     Rolle a random <i class="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
                     <option value={0}>show all</option>
-                    {cards.map((data) => (
+                    <option value={1}>show 1</option>
+                    <option value={2}>show 2</option>
+                    {/* {cards.map((data) => (
                         <option value={data.id} key={data.id}>
                             {data.title}
                         </option>
-                    ))}
+                    ))} */}
                 </select>
             </StyledMenu>
             <div className="card-holder">{RenderCard()}</div>
