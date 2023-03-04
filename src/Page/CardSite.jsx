@@ -34,7 +34,7 @@ export default function CardSite() {
             <h1>Kosmetiker kort app</h1>
             <StyledMenu>
                 <button onClick={() => RandomRoll()}>
-                    Roll{/*  a random */} <i className="fa-solid fa-dice"></i>
+                    Roll a random <i className="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
                     <option value={0}>show all</option>
@@ -64,7 +64,7 @@ const StyledMenu = styled.menu`
         border: 1px solid transparent;
         border-radius: 8px;
         transition: border-color 0.25s;
-        padding: 0.6em 1.2em;
+        padding: 0.6em 1em;
         font-size: 1em;
         font-weight: 700;
         cursor: pointer;
@@ -88,7 +88,7 @@ const StyledMenu = styled.menu`
         border: 1px solid transparent;
         border-radius: 8px;
         transition: border-color 0.25s;
-        padding: 0.6em 1.2em;
+        padding: 0.6em 1em;
         font-size: 1em;
         cursor: pointer;
         &:hover,
