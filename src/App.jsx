@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
-import "./App.css"
+import styled from "styled-components"
 import Card from "./Components/Card"
+import "./App.css"
 
 //! stupid way i hate it
 import image1 from "./assets/images/Billede1.png"
@@ -15,7 +16,8 @@ import image9 from "./assets/images/Billede9.png"
 import image10 from "./assets/images/Billede10.png"
 import image11 from "./assets/images/Billede11.png"
 import image12 from "./assets/images/Billede12.png"
-import styled from "styled-components"
+
+//? random til map  .sort(() => Math.random() - 0.5)
 
 export default function App() {
     const cards = [
@@ -260,32 +262,95 @@ export default function App() {
         },
     ]
 
-    const [reload, setReload] = useState()
+    const [cardNum, setCardNum] = useState(1)
 
-    useEffect(() => {
-        console.log("hallo ?")
-    }, [reload])
+    const handleChange = (event) => {
+        setCardNum(event.target.cardNum)
+    }
 
-    function renderCard() {
-        return cards
-            .sort(() => Math.random() - 0.5)
-            .slice(0, 1)
-            .map((data) => <Card data={data} key={data.id} />)
+    console.log(cardNum)
+
+    // den her vælger kortet
+    function RenderCard() {
+        if (cardNum === 0) {
+            return cards.slice(0, cards.length).map((data) => <Card data={data} key={data.id} />)
+        } else {
+            return cards.slice(cardNum - 1, cardNum).map((data) => <Card data={data} key={data.id} />)
+        }
     }
 
     return (
         <>
-            <h1>Anitas kort app</h1>
+            <h1>kort app</h1>
             <StyledMenu>
-                <button onClick={() => setReload(!reload)}>
+                <button disabled={cardNum === 0 ? true : false}>
                     Rolle a random <i class="fa-solid fa-dice"></i>
                 </button>
+                <select value={cardNum} onChange={handleChange}>
+                    <option value={0}>show all</option>
+                    {cards.map((data) => (
+                        <option value={data.id} key={data.id}>
+                            {data.title}
+                        </option>
+                    ))}
+                </select>
             </StyledMenu>
-            <div className="card-holder">{renderCard()}</div>
+            <div className="card-holder">{RenderCard()}</div>
         </>
     )
 }
 
 const StyledMenu = styled.button`
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
     width: 100%;
+    background-color: #1a1a1a;
+    button {
+        background-color: #ff8a9e;
+        color: #1a1a1a;
+        font-weight: 700;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        transition: border-color 0.25s;
+        padding: 0.6em 1.2em;
+        font-size: 1em;
+        cursor: pointer;
+        &:hover {
+            border-color: #ff8a9e;
+            background-color: #1a1a1a;
+            color: #ff8a9e;
+        }
+        &:disabled {
+            background-color: #1a1a1a;
+            color: #6a6a6a;
+            &:hover {
+                border-color: #1a1a1a;
+                background-color: #1a1a1a;
+                color: #6a6a6a;
+                cursor: default;
+            }
+        }
+    }
+    select {
+        border: 1px solid transparent;
+        border-radius: 8px;
+        transition: border-color 0.25s;
+        padding: 0.6em 1.2em;
+        font-size: 1em;
+        cursor: pointer;
+        option {
+            cursor: pointer;
+            &:checked {
+                background-color: #ff8a9e !important;
+            }
+            &:focus {
+                background-color: #ff8a9e !important;
+            }
+            &:hover {
+                background-color: #ff8a9e !important;
+            }
+        }
+    }
 `

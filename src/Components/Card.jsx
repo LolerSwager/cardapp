@@ -4,7 +4,6 @@ import styled from "styled-components"
 
 export default function Card({ data }) {
     const [flipCard, setFlipCard] = useState(false)
-    console.log(flipCard)
     return (
         <StyledCard>
             <CardFront
