@@ -268,7 +268,7 @@ export default function App() {
         setCardNum(parseInt(event.target.value))
     }
 
-    // console.log(cardNum);
+    console.log(cardNum)
 
     // den her vælger kortet
     function RenderCard() {
@@ -280,7 +280,12 @@ export default function App() {
     }
 
     function RandomRoll() {
-        setCardNum(Math.floor(Math.random() * cards.length) + 1)
+        const randomNum = Math.floor(Math.random() * cards.length) + 1
+        if (randomNum === cardNum) {
+            RandomRoll()
+        } else {
+            setCardNum(randomNum)
+        }
     }
 
     return (
@@ -345,15 +350,15 @@ const StyledMenu = styled.menu`
         padding: 0.6em 1.2em;
         font-size: 1em;
         cursor: pointer;
+        &:hover,
+        :focus {
+            border-color: #ff8a9e !important;
+        }
         option {
             cursor: pointer;
-            &:checked {
-                background-color: #ff8a9e !important;
-            }
-            &:focus {
-                background-color: #ff8a9e !important;
-            }
-            &:hover {
+            &:checked,
+            :hover,
+            :focus {
                 background-color: #ff8a9e !important;
             }
         }
