@@ -6,16 +6,28 @@ import CardSite from "./Page/CardSite"
 export default function App() {
     return (
         <>
+            <StyledHeader>
+                <nav>
+                    <ul></ul>
+                </nav>
+            </StyledHeader>
             <CardSite />
             <StyledFooter>
                 <p>
-                    made by <i class="fa-solid fa-heart"></i>{" "}
-                    <a href="https://github.com/LolerSwager">Jannick Nielsen</a>
+                    made by <i class="fa-solid fa-heart"></i>
+                    <a href="https://github.com/LolerSwager" target="_blank">
+                        Jannick Nielsen
+                    </a>
                 </p>
+                <p></p>
             </StyledFooter>
         </>
     )
 }
+
+const StyledHeader = styled.header`
+    background-color: #1a1a1a;
+`
 
 const StyledFooter = styled.footer`
     display: flex;

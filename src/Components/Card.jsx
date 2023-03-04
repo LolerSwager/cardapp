@@ -85,7 +85,7 @@ const CardFront = styled.section`
     h2 {
         background-color: #070707b9;
         width: 100%;
-        height: 50px;
+        padding: 1rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -104,7 +104,7 @@ const CardBack = styled.section`
     max-width: 600px;
     h2 {
         width: 100%;
-        height: 50px;
+        padding: 1rem 0;
         display: flex;
         align-items: center;
         justify-content: center;
