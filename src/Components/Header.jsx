@@ -29,8 +29,9 @@ export default function Header() {
 
 const StyledHeader = styled.header`
     background-color: #1a1a1a;
-    display: none;
+
     nav {
+        display: none;
         background-color: #070707ee;
         div {
             padding: 1rem;
@@ -55,7 +56,7 @@ const StyledHeader = styled.header`
                 list-style: none;
                 padding: 0.5rem;
                 a {
-                    padding: .5rem;
+                    padding: 0.5rem;
                     color: #ffffff;
                     text-decoration: none;
                     font-size: 1.3em;
