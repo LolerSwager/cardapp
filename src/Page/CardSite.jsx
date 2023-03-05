@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Card from "../Components/Card"
-import { CardsArray as cards } from "../Json/CardsArray"
+import { CardsArray as cards } from "../Array/CardsArray"
 
 export default function CardSite() {
     document.title = "Kosmetiker kort app"
