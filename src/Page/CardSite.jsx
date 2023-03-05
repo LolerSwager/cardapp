@@ -39,7 +39,7 @@ export default function CardSite() {
                     {window.innerWidth <= 517 ? "" : "Roll a random"} <i className="fa-solid fa-dice"></i>
                 </button>
                 <select value={cardNum} onChange={handleChange}>
-                    <option value={0}>show all</option>
+                    <option value={0}>Show all</option>
                     {cards.map((data) => (
                         <option value={data.id} key={data.id}>
                             {data.title}

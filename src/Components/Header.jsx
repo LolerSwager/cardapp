@@ -29,7 +29,7 @@ export default function Header() {
 
 const StyledHeader = styled.header`
     background-color: #1a1a1a;
-
+    display: none;
     nav {
         background-color: #070707ee;
         div {

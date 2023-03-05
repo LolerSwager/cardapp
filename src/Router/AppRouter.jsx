@@ -6,7 +6,8 @@ import Home from "../Page/Home"
 export default function AppRouter() {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<CardSite />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/card" element={<CardSite />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
