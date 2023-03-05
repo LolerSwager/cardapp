@@ -89,6 +89,7 @@ const CardFront = styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
     img {
         width: 100%;
@@ -108,6 +109,7 @@ const CardBack = styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
     h3 {
         margin: 0 1rem;
