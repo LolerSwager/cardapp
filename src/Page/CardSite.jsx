@@ -47,7 +47,7 @@ export default function CardSite() {
                     ))}
                 </select>
             </StyledMenu>
-            <div className="card-holder">{RenderCard()}</div>
+            <div>{RenderCard()}</div>
         </main>
     )
 }
