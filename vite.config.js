@@ -11,6 +11,7 @@ export default defineConfig({
                 name: "Anita Berg",
                 short_name: "AB",
                 theme_color: "#ff8a9e",
+                background_color: "#1a1a1a",
                 icons: [{ src: "/icons/AB.png", sizes: "512x512", type: "image/png", purpose: "any maskable" }],
             },
             registerType: "autoUpdate",
