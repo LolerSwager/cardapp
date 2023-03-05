@@ -12,8 +12,12 @@ export default function Home() {
                     Siden "<span>{wlp}</span>" blev ikke fundet
                 </h1>
                 <div>
-                    <a onClick={() => navigate(-1)}>Gå tilbage til den sidste side</a>
-                    <Link to="/">Gå til forsiden</Link>
+                    <a onClick={() => navigate(-1)}>
+                        <i class="fa-solid fa-arrow-left-long"></i> Gå tilbage til den sidste side
+                    </a>
+                    <Link to="/">
+                        <i class="fa-solid fa-house-chimney"></i> Gå til forsiden
+                    </Link>
                 </div>
             </div>
         </ErrorPage>
