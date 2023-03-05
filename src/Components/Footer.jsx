@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <StyledFooter>
             <p>
-                Made by <i class="fa-solid fa-heart"></i>
+                Made by <i className="fa-solid fa-heart"></i>
                 <a href="https://github.com/LolerSwager" target="_blank">
                     Jannick Nielsen
                 </a>
