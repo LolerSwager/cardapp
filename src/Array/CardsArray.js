@@ -1,3 +1,4 @@
+import UnknownImage from "../assets/images/AB.png"
 import image1 from "../assets/images/Billede1.png"
 import image2 from "../assets/images/Billede2.jpg"
 import image3 from "../assets/images/Billede3.jpg"
@@ -14,6 +15,7 @@ import image12 from "../assets/images/Billede12.png"
 export const CardsArray = [
     {
         id: 1,
+        collection: 1,
         title: "Normal hudtype",
         image: image1,
         kendetegn: [
@@ -27,6 +29,7 @@ export const CardsArray = [
     },
     {
         id: 2,
+        collection: 1,
         title: "Tør hudtype",
         image: image2,
         kendetegn: [
@@ -47,6 +50,7 @@ export const CardsArray = [
     },
     {
         id: 3,
+        collection: 1,
         title: "Fedtet hudtype",
         image: image3,
         kendetegn: [
@@ -66,6 +70,7 @@ export const CardsArray = [
     },
     {
         id: 4,
+        collection: 1,
         title: "Kombineret hudtype",
         image: image4,
         kendetegn: [
@@ -84,6 +89,7 @@ export const CardsArray = [
     },
     {
         id: 5,
+        collection: 1,
         title: "Sart hudtype",
         image: image5,
         kendetegn: [
@@ -107,6 +113,7 @@ export const CardsArray = [
     },
     {
         id: 6,
+        collection: 1,
         title: "Dehydreret hudtype",
         image: image6,
         kendetegn: [
@@ -125,6 +132,7 @@ export const CardsArray = [
     },
     {
         id: 7,
+        collection: 1,
         title: "Tilstoppet hudtype",
         image: image7,
         kendetegn: ["Åbne og lukkede comedoner", "Pabler og pustler", "Evt. cicatricer", "Ujævnoverﬂade"],
@@ -140,6 +148,7 @@ export const CardsArray = [
     },
     {
         id: 8,
+        collection: 1,
         title: "Fejlbehandlet hudtype",
         image: image8,
         kendetegn: [
@@ -161,6 +170,7 @@ export const CardsArray = [
     },
     {
         id: 9,
+        collection: 1,
         title: "Sensitiv hudtype",
         image: image9,
         kendetegn: [
@@ -180,6 +190,7 @@ export const CardsArray = [
     },
     {
         id: 10,
+        collection: 1,
         title: "Pigmenteret hudtilstand (Macula)",
         image: image10,
         kendetegn: [
@@ -192,6 +203,7 @@ export const CardsArray = [
     },
     {
         id: 11,
+        collection: 1,
         title: "Atrofisk hudtilstand Aldersbetinget",
         image: image11,
         kendetegn: [
@@ -225,6 +237,7 @@ export const CardsArray = [
     },
     {
         id: 12,
+        collection: 1,
         title: "Atrofisk tilstand Miljøbetinget",
         image: image12,
         kendetegn: ["Læderagtig overflade", "Store porer", "Comedoner", "Linjer/rynker og nedsat turgor "],
@@ -246,5 +259,148 @@ export const CardsArray = [
             "Sol",
             "Forurening",
         ],
+    },
+    {
+        id: 13,
+        collection: 2,
+        title: "Makula (hyper- og hyppigpigmentering)",
+        image: UnknownImage,
+        Unknown: [
+            "En velafgrænset farveændring i hudens niveau",
+            "Hypergpigmentering - makula med mere pigment end omgivelserne",
+            "Hypopigpigmentering - makula med mindre pigment end omgivelserne",
+        ],
+    },
+    {
+        id: 14,
+        collection: 2,
+        title: "Nævi (i ental hedder det nævus)",
+        image: UnknownImage,
+        Unknown: [
+            "Epidermale nævus - let hævede og vorteagtige. Bindevævsnævi er kuppelformede, hudfarvede el. let pigmenterede",
+            "Melanocytære nævus (skønhedsplet) - mest almindelige pigmentrede, godartede modermærke. Velafgrænsede, niveau eller let eleveret (hævet) oftest større end 1.0 mm i diameter, som typisk findes senere i livet",
+            "Hæmangiom (jordbærmærke, kun muligt de første leveår) - godartet blodkartumor lokaliseret i huden. Erhvervet el. medfødt",
+            "Nævus flammæus (portvinsmærke, storke bid) - fladt rødt ”modermærke” som følger huden. Den mest almindelige hæmangiom",
+        ],
+    },
+    {
+        id: 15,
+        collection: 2,
+        title: "Milier",
+        image: UnknownImage,
+        Unknown: [
+            "Periodisk anomali",
+            "Ses oftest omkring øjenområdet",
+            "Ophobning af hudceller, som er indkapslet under hudens overflade, og derved laves denne hvide knop",
+            "Opstår som resultat af tilstopning i huden - døde hudceller kan ikke transporteres til hudens overflade (epidermis) korrekt",
+        ],
+    },
+    {
+        id: 16,
+        collection: 2,
+        title: "Comedoner (hudorm/blackhead)",
+        image: UnknownImage,
+        Unknown: ["Urenhed", "Error under catergory not supportet"],
+    },
+    {
+        id: 17,
+        collection: 2,
+        title: "Pustler",
+        image: UnknownImage,
+        Unknown: [
+            "Periodisk anomali",
+            "Urenhed",
+            "Pusfyldt hulrum fyldt med pus",
+            "Det er en bums med gul pus (bakterier)",
+            "Pus- (materie) = flydende betændelsesmateriale der indeholder: dødt væv, hvide blodceller, vævvæske og bakterier",
+        ],
+    },
+    {
+        id: 18,
+        collection: 2,
+        title: "Pabler",
+        image: UnknownImage,
+        Unknown: ["Periodisk anomali", "Urenhed", "Under 0,5 cm", "Rød", "Hævet", "øm"],
+    },
+    {
+        id: 19,
+        collection: 2,
+        title: "Cyste",
+        image: UnknownImage,
+        Unknown: [
+            "Periodiske anomali",
+            "Urenhed",
+            "De er større typer bumser, og er ligesom papler og pustler, betændte bumser",
+            "En lukket sæk som indeholder flydende materiale- lukket vil sige at væggene er en sammenhængende cellebeklædning. Lukket sæk der indeholder fx pus eller væske",
+        ],
+    },
+    {
+        id: 20,
+        collection: 2,
+        title: "Blærer Visikel el. Bulla",
+        image: UnknownImage,
+        Unknown: [
+            "Alle er periodiske anomalier",
+            "Visikel - lille væskefyldt blære, under 0,5 mm i diameter, som følge af ødem (væskeophobning). Ses ved gnavsår, skoldknopper og herpes",
+            "Bulla - Større væskefyldt blære, som følge af Ødem. Ses ved brandsår, og er over 0,5 cm (brændsår)",
+            "Kvadel - Flad forhøjning som følge af ødem. Opstår typisk i huden i løbet af få minutter og forsvinder i løbet af 1 døgns tid. Ses ved nældefeber (bleg og lyserød)",
+        ],
+    },
+    {
+        id: 21,
+        collection: 2,
+        title: "Nævus - modermærke",
+        image: UnknownImage,
+        Unknown: [
+            "Et fælles ord for både medfødte og senere udviklede hudforandring. Mest almindelige er pigmenterede nævi, der kommer fra melanocytter",
+            "Efelider - Fregner. Talrige, velafgrænsede, overfladiske melanocytophopninger oftest mindre end 2 min i diameter, som typisk findes senere i livet",
+            "Lentigo (senilis) - Leverpletter / alderdomspletter. Str: op til 3 cm ",
+        ],
+    },
+    {
+        id: 22,
+        collection: 2,
+        title: "Andre anomalier",
+        image: UnknownImage,
+        Unknown: [
+            "Verruca - vorte. Permanent virus i huden - kan fjernes ved læge/hudlæge. En epidermal hudtumor, som skyldes infektion med human papillomavirus (virus)",
+            "Seborrhoisk keratose - Papillomavirus, gammelmandsvorte - en epidermal hudtumor der skyldes aldring",
+        ],
+    },
+    {
+        id: 23,
+        collection: 2,
+        title: "Teleangiectasia",
+        image: UnknownImage,
+        Unknown: [
+            "Betyder Karudvidelse",
+            "Permanent anomali",
+            "En synlig udvidelse af små kappilærer (lyserøde blodkar)",
+            "Courperose - (samling af karudvidelser på et område fx kinder/ved næsefløj typisk pga. kulde/varme påvirkninger- permanent anomalier",
+        ],
+    },
+    {
+        id: 24,
+        collection: 2,
+        title: "Cicatrisser - ar",
+        image: UnknownImage,
+        Unknown: [
+            "Den normale hud bliver erstattet af bindevæv",
+            "Keloid ar - overdreven vækst af arvæv i et hudområde",
+        ],
+    },
+    {
+        id: 25,
+        collection: 2,
+        title: "Erythem",
+        image: UnknownImage,
+        Unknown: ["Rødme i huden (øget blodcirkulation)", "Ses fx ved solskoldning, og når man rødmer"],
+    },
+    {
+        id: 26,
+        collection: 2,
+        title: "Ødem",
+        image: UnknownImage,
+        Unknown: ["Væskeophobninger "],
     },
 ]

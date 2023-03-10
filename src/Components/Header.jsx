@@ -10,7 +10,7 @@ export default function Header() {
                 <div>
                     <h1>Anita Berg</h1>
                     <i
-                        class={burgerMenu === false ? "fa-solid fa-bars" : "fa-solid fa-x"}
+                        className={burgerMenu === false ? "fa-solid fa-bars" : "fa-solid fa-x"}
                         onClick={() => setBurgerMenu(!burgerMenu)}
                     ></i>
                 </div>

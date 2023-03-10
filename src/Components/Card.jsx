@@ -1,9 +1,23 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import styled from "styled-components"
 
 export default function Card({ data }) {
     const [flipCard, setFlipCard] = useState(false)
+    const [primeColor, setPrimeColor] = useState()
+    const [primeSymbol, setPrimeSymbol] = useState()
+
+    useEffect(() => {
+        if (data.collection === 1) {
+            setPrimeColor("#ff8a9e")
+            setPrimeSymbol("\f004")
+        }
+        if (data.collection === 2) {
+            setPrimeColor("#09d2f6")
+            setPrimeSymbol("\f005")
+        }
+    }, [])
+
     return (
         <StyledCard>
             <CardFront
@@ -17,6 +31,8 @@ export default function Card({ data }) {
             </CardFront>
             <CardBack
                 showCard={flipCard}
+                TheColor={primeColor}
+                theSymbol={primeSymbol}
                 onClick={() => {
                     flipCard ? setFlipCard(false) : setFlipCard(true)
                 }}
@@ -32,7 +48,6 @@ export default function Card({ data }) {
                         </ul>
                     </>
                 )}
-
                 {data.Behandlingsformål && (
                     <>
                         <h3>Behandlingsformål</h3>
@@ -43,7 +58,6 @@ export default function Card({ data }) {
                         </ul>
                     </>
                 )}
-
                 {data.Kontraindikationer && (
                     <>
                         <h3>Kontraindikationer</h3>
@@ -54,12 +68,21 @@ export default function Card({ data }) {
                         </ul>
                     </>
                 )}
-
                 {data.Kan_skyldes && (
                     <>
                         <h3>Kan skyldes</h3>
                         <ul>
                             {data.Kan_skyldes.map((context) => (
+                                <li key={context}>{context}</li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+
+                {data.Unknown && (
+                    <>
+                        <ul>
+                            {data.Unknown.map((context) => (
                                 <li key={context}>{context}</li>
                             ))}
                         </ul>
@@ -100,7 +123,7 @@ const CardFront = styled.section`
 
 const CardBack = styled.section`
     display: ${(props) => (props.showCard ? "unset" : "none")};
-    border: 1px solid #ff8a9e;
+    border: 1px solid ${(props) => props.TheColor};
     width: 100%;
     max-width: 600px;
     h2 {
@@ -120,9 +143,9 @@ const CardBack = styled.section`
             list-style-type: none;
             &::before {
                 font-family: "Font Awesome 5 Free";
-                content: "\f004";
+                content: "${(props) => props.theSymbol}";
                 font-weight: 500;
-                color: #ff8a9e;
+                color: ${(props) => props.TheColor};
                 display: inline-block;
                 width: 1em;
                 margin: 0 0.5rem 0 0;
@@ -130,9 +153,9 @@ const CardBack = styled.section`
             &:hover {
                 &::before {
                     font-family: "Font Awesome 5 Free";
-                    content: "\f004";
+                    content: "${(props) => props.theSymbol}";
                     font-weight: 500;
-                    color: #ff8a9e;
+                    color: ${(props) => props.TheColor};
                     display: inline-block;
                     width: 1em;
                     margin: 0 0.5rem 0 0;
